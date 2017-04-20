@@ -1,0 +1,22 @@
+{
+  "name": "angular-json-ld-editor",
+  "authors": [
+    "Jim McCusker <mccusker@gmail.com>"
+  ],
+  "description": "A JSON-LD editor and renderer directive for Angular.",
+  "main": "jsonLdEditor.js",
+  "keywords": [
+    "RDF",
+    "JSON-LD",
+    "AngularJS"
+  ],
+  "license": "Apache 2.0",
+  "homepage": "http://github.com/tetherless-world/anguar-json-ld-editor",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
