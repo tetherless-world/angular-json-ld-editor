@@ -130,34 +130,34 @@
          ng-if="resource['@type'] !== undefined"
          flex="initial"
          md-selected-item="resource['@type']"
-         md-search-text="resource['@type']"
-         md-items="item in queryDatatypes(resource['@type'])"
+         md-search-text="typeSearch"
+         md-items="item in queryDatatypes(typeSearch)"
          md-autoselect="true"
          md-item-text="item"
          md-min-length="0"
          md-floating-label="Type">
         <md-item-template>
-          <span md-highlight-text="resource['@type']" md-highlight-flags="^i">{{item}}</span>
+          <span md-highlight-text="typeSearch" md-highlight-flags="^i">{{item}}</span>
         </md-item-template>
         <md-not-found>
-          <a ng-click="resource['@type'] = resource['@type']">Add Datatype <i>{{resource['@type']}}</i></a>
+          <a ng-click="resource['@type'] = typeSearch">Add Datatype <i>{{typeSearch}}</i></a>
         </md-not-found>
       </md-autocomplete>
       <md-autocomplete
          ng-if="resource['@language'] !== undefined"
          flex="initial"
          md-selected-item="resource['@language']"
-         md-search-text="resource['@language']"
-         md-items="item in queryLanguages(resource['@language'])"
+         md-search-text="searchLang"
+         md-items="item in queryLanguages(searchLang)"
          md-autoselect="true"
          md-item-text="item"
          md-min-length="0"
          md-floating-label="Language">
         <md-item-template>
-          <span md-highlight-text="resource['@language']" md-highlight-flags="^i">{{item}}</span>
+          <span md-highlight-text="searchLang" md-highlight-flags="^i">{{item}}</span>
         </md-item-template>
         <md-not-found>
-          <a ng-click="resource['@language'] = searchLang">Add Language <i>{{resource['@language']}}</i></a>
+          <a ng-click="resource['@language'] = searchLang">Add Language <i>{{searchLang}}</i></a>
         </md-not-found>
       </md-autocomplete>
   </md-card-title-text>

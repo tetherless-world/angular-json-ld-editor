@@ -91,9 +91,9 @@
             });
             for (key in keys) {
                 if (uri.startsWith(keys[key])) {
-                    var replacement = inverseContext[key];
-                    if (replacement == "@vocab") uri = uri.replace(key, "");
-                    else uri = uri.replace(key, replacement+":");
+                    var replacement = inverseContext[keys[key]];
+                    if (replacement == "@vocab") uri = uri.replace(keys[key], "");
+                    else result = uri.replace(keys[key], replacement+":");
                     break;
                 }
             }
@@ -163,6 +163,7 @@
                             if (resource[uri]) result = resource[uri];
                             if (result == null && scope.inverseContext) {
                                 var contextualized = contextualize(uri, scope.inverseContext);
+                                //console.log(uri, contextualized, resource[contextualized]);
                                 if (resource[contextualized]) result = resource[contextualized];
                             }
                             if (result != null) {
@@ -270,7 +271,6 @@
                     };
                     scope.addProperty = function(property) {
                         if (property === undefined) return;
-                        console.log("adding property", property);
                         if (scope.isString(scope.resource)) {
                             var newResource = {"@id" : scope.resource};
                             if (scope.index !== undefined) scope.parent[scope.property][scope.index] = newResource;
